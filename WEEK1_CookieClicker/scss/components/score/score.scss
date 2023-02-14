@@ -1,0 +1,6 @@
+@use '../../abstracts/variables';
+
+.score {
+    color: map-get(variables.$cookie, "cookieSpots");
+    font-size: 12rem;
+}

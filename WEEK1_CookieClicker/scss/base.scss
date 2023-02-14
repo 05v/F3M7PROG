@@ -8,6 +8,15 @@ body {
     background: linear-gradient(to bottom right, map-get(variables.$mainColors, 'backgroundColorOne'), map-get(variables.$mainColors, 'backgroundColorTwo'));
     flex-direction: column;
     font-family: 'Open Sans', sans-serif;
+    padding: 4rem;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
 }
 
 .buttonAndAvatarWrapper {

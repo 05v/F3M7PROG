@@ -5,9 +5,11 @@
     aspect-ratio: 1/1;
     background: map-get(variables.$cookie, "cookieBackground");
     border-radius: 50%;
+    box-shadow: inset 0 0 10rem 0rem map-get(variables.$cookie, "cookieSpots"),
+        0 2rem 5rem 0rem map-get(variables.$cookie, "cookieBackground");
     position: relative;
     overflow: hidden;
-    border: 0.5rem solid map-get(variables.$cookie, "cookieSpots");
+    border: 0.8rem solid map-get(variables.$cookie, "cookieSpots");
 
     &__spots {
         width: 10rem;
