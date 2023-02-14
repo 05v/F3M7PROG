@@ -1,0 +1,30 @@
+@media screen and (max-width: 62.5rem) {
+    .save {
+        display: none;
+    }
+
+    .upgrades {
+        display: none;
+    }
+
+    .header {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .main {
+        flex-direction: column-reverse;
+    }
+
+    .cookie {
+        transform: scale(0.6);
+
+        &:active {
+            transform: scale(0.55);
+        }
+    }
+
+    .score {
+        font-size: 200%;
+    }
+}
