@@ -11,6 +11,10 @@
     overflow: hidden;
     border: 0.8rem solid map-get(variables.$cookie, "cookieSpots");
 
+    &:hover {
+        cursor: pointer;
+    }
+
     &__spots {
         width: 10rem;
         aspect-ratio: 1/1;

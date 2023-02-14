@@ -49,6 +49,9 @@ body {
   overflow: hidden;
   border: 0.8rem solid #483434;
 }
+.cookie:hover {
+  cursor: pointer;
+}
 .cookie__spots {
   width: 10rem;
   aspect-ratio: 1/1;
@@ -161,6 +164,9 @@ body {
   overflow: hidden;
   border: 0.5rem solid #483434;
 }
+.avatar:hover {
+  cursor: pointer;
+}
 .avatar__head {
   width: 35%;
   height: 35%;
@@ -170,6 +176,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  transition: 0.8s all;
 }
 .avatar__body {
   width: 70%;
@@ -180,6 +187,9 @@ body {
   top: 100%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+.avatar:hover .avatar__head {
+  transform: translate(-50%, -50%) scale(1.15);
 }
 
 .score {
