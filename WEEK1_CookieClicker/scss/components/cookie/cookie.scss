@@ -8,7 +8,6 @@
     position: relative;
     overflow: hidden;
     border: 0.5rem solid map-get(variables.$cookie, "cookieSpots");
-    ;
 
     &__spots {
         width: 10rem;

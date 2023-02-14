@@ -7,4 +7,11 @@ body {
     min-height: 100vh;
     background: linear-gradient(to bottom right, map-get(variables.$mainColors, 'backgroundColorOne'), map-get(variables.$mainColors, 'backgroundColorTwo'));
     flex-direction: column;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.buttonAndAvatarWrapper {
+    display: flex;
+    justify-content: flex-end;
+    gap: 2rem;
 }

@@ -1,11 +1,5 @@
 @use '../../abstracts/variables';
 
-.buttonWrapper {
-    width: 100%;
-    display: flex;
-
-}
-
 .save {
     font-size: 100%;
     height: min-content;
@@ -14,4 +8,10 @@
     color: map-get(variables.$save, 'saveButtonText');
     border: none;
     max-width: 20rem;
+    transform: translateY(2.5rem);
+    border-radius: 0.5rem;
+
+    &:hover {
+        background-color: map-get(variables.$save, 'saveButtonHover');
+    }
 }

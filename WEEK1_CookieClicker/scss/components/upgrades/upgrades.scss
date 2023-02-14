@@ -13,7 +13,12 @@
         padding: 2rem;
         display: grid;
         grid-column-gap: 2rem;
-        grid-template-columns: 10% 90%;
+        grid-template-columns: 5% 95%;
         // border-bottom: 0.2rem solid map-get(variables.$colorVars, "cookieBackground");
+
+        &>i {
+            transform: translateY(10%);
+            color: map-get(variables.$cookie, "cookieSpots");
+        }
     }
 }
