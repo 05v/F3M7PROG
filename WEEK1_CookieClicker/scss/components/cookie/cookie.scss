@@ -10,9 +10,14 @@
     position: relative;
     overflow: hidden;
     border: 0.8rem solid map-get(variables.$cookie, "cookieSpots");
+    transition: 0.2s all;
 
     &:hover {
         cursor: pointer;
+    }
+
+    &:active {
+        transform: scale(0.95);
     }
 
     &__spots {

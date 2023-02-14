@@ -48,9 +48,13 @@ body {
   position: relative;
   overflow: hidden;
   border: 0.8rem solid #483434;
+  transition: 0.2s all;
 }
 .cookie:hover {
   cursor: pointer;
+}
+.cookie:active {
+  transform: scale(0.95);
 }
 .cookie__spots {
   width: 10rem;
@@ -194,7 +198,12 @@ body {
 
 .score {
   color: #483434;
-  font-size: 12rem;
+  font-size: 500%;
+  background-color: whitesmoke;
+  padding: 2rem;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
 }
 
 /*# sourceMappingURL=style.css.map */

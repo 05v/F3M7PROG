@@ -2,5 +2,10 @@
 
 .score {
     color: map-get(variables.$cookie, "cookieSpots");
-    font-size: 12rem;
+    font-size: 500%;
+    background-color: whitesmoke;
+    padding: 2rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
 }
