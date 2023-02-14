@@ -1,0 +1,77 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 2rem;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #4B6587, #8FC1D4);
+}
+
+.cookie {
+  width: 40rem;
+  aspect-ratio: 1/1;
+  background: #6B4F4F;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  border: 0.5rem solid #483434;
+}
+.cookie__spots {
+  width: 10rem;
+  aspect-ratio: 1/1;
+  background-color: #483434;
+  border-radius: 50%;
+  position: absolute;
+}
+.cookie__spots--first {
+  top: 36%;
+  left: 6%;
+  width: 8rem;
+}
+.cookie__spots--second {
+  top: 10%;
+  left: 30%;
+  width: 6rem;
+}
+.cookie__spots--third {
+  top: 70%;
+  left: 15%;
+  width: 4rem;
+}
+.cookie__spots--fourth {
+  top: 34%;
+  left: 40%;
+  width: 8rem;
+}
+.cookie__spots--fifth {
+  top: 20%;
+  left: 70%;
+  width: 7rem;
+}
+.cookie__spots--sixth {
+  top: 60%;
+  left: 35%;
+  width: 8rem;
+}
+.cookie__spots--seventh {
+  top: 70%;
+  left: 70%;
+  width: 12rem;
+}
+
+/*# sourceMappingURL=style.css.map */
