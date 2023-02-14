@@ -96,7 +96,6 @@ body {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
   background: whitesmoke;
   width: max-content;
   border-radius: 1rem;
@@ -106,10 +105,27 @@ body {
   display: grid;
   grid-column-gap: 2rem;
   grid-template-columns: 5% 95%;
+  transition: 0.2s all;
 }
 .upgrades__upgrade > i {
   transform: translateY(10%);
   color: #483434;
+}
+.upgrades__upgrade:hover {
+  cursor: pointer;
+  background: #483434;
+  color: whitesmoke;
+}
+.upgrades__upgrade:hover > i {
+  color: whitesmoke;
+}
+.upgrades__upgrade:nth-of-type(1) {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+.upgrades__upgrade:nth-of-type(3) {
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
 }
 
 .header {
@@ -128,9 +144,12 @@ body {
   max-width: 20rem;
   transform: translateY(2.5rem);
   border-radius: 0.5rem;
+  transition: 0.2s all;
 }
 .save:hover {
+  cursor: pointer;
   background-color: #6B4F4F;
+  color: whitesmoke;
 }
 
 .avatar {
