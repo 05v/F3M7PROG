@@ -1,7 +1,10 @@
+@use 'abstracts/variables';
+
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(to bottom right, #4B6587, #8FC1D4);
+    background: linear-gradient(to bottom right, map-get(variables.$colorVars, 'backgroundColorOne'), map-get(variables.$colorVars, 'backgroundColorTwo'));
+    flex-direction: column;
 }

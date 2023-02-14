@@ -1,0 +1,14 @@
+@use '../../abstracts/variables';
+
+.upgrades {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    &__upgrade {
+        width: 20%;
+        padding: 2rem;
+        border-bottom: 0.2rem solid map-get(variables.$colorVars, "cookieBackground");
+    }
+}

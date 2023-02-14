@@ -1,3 +1,5 @@
-@use 'reset';
+@use 'abstracts/reset';
 @use 'base';
-@use 'components/cookie';
+@use 'components/cookie/cookie';
+@use 'components/upgrades/upgrades';
+@use 'components/header/header';

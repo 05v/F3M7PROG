@@ -20,6 +20,7 @@ body {
   align-items: center;
   min-height: 100vh;
   background: linear-gradient(to bottom right, #4B6587, #8FC1D4);
+  flex-direction: column;
 }
 
 .cookie {
@@ -35,7 +36,7 @@ body {
   width: 10rem;
   aspect-ratio: 1/1;
   background-color: #483434;
-  border-radius: 50%;
+  border-radius: 45%;
   position: absolute;
 }
 .cookie__spots--first {
@@ -72,6 +73,25 @@ body {
   top: 70%;
   left: 70%;
   width: 12rem;
+}
+
+.upgrades {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.upgrades__upgrade {
+  width: 20%;
+  padding: 2rem;
+  border-bottom: 0.2rem solid #6B4F4F;
+}
+
+.header {
+  padding: 4rem;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 60% 25% 10%;
 }
 
 /*# sourceMappingURL=style.css.map */
