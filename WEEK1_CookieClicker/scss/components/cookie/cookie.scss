@@ -3,17 +3,17 @@
 .cookie {
     width: 40rem;
     aspect-ratio: 1/1;
-    background: map-get(variables.$colorVars, "cookieBackground");
+    background: map-get(variables.$cookie, "cookieBackground");
     border-radius: 50%;
     position: relative;
     overflow: hidden;
-    border: 0.5rem solid map-get(variables.$colorVars, "cookieSpots");
+    border: 0.5rem solid map-get(variables.$cookie, "cookieSpots");
     ;
 
     &__spots {
         width: 10rem;
         aspect-ratio: 1/1;
-        background-color: map-get(variables.$colorVars, "cookieSpots");
+        background-color: map-get(variables.$cookie, "cookieSpots");
         border-radius: 45%;
         position: absolute;
 

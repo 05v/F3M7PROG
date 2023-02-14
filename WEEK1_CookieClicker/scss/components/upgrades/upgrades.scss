@@ -5,10 +5,15 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    background: map-get(variables.$upgrades, "backgroundColor");
+    width: max-content;
+    border-radius: 1rem;
 
     &__upgrade {
-        width: 20%;
         padding: 2rem;
-        border-bottom: 0.2rem solid map-get(variables.$colorVars, "cookieBackground");
+        display: grid;
+        grid-column-gap: 2rem;
+        grid-template-columns: 10% 90%;
+        // border-bottom: 0.2rem solid map-get(variables.$colorVars, "cookieBackground");
     }
 }

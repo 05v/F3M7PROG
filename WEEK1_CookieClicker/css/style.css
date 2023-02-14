@@ -80,11 +80,15 @@ body {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  background: whitesmoke;
+  width: max-content;
+  border-radius: 1rem;
 }
 .upgrades__upgrade {
-  width: 20%;
   padding: 2rem;
-  border-bottom: 0.2rem solid #6B4F4F;
+  display: grid;
+  grid-column-gap: 2rem;
+  grid-template-columns: 10% 90%;
 }
 
 .header {
@@ -92,6 +96,33 @@ body {
   width: 100%;
   display: grid;
   grid-template-columns: 60% 25% 10%;
+}
+
+.buttonWrapper {
+  width: 100%;
+  display: flex;
+}
+
+.save {
+  font-size: 100%;
+  height: min-content;
+  padding: 1rem 2rem;
+  background-color: #645CBB;
+  color: whitesmoke;
+  border: none;
+  max-width: 20rem;
+}
+
+.avatarWrapper {
+  width: 100%;
+  display: flex;
+}
+
+.avatar {
+  width: 10rem;
+  height: 10rem;
+  background-color: whitesmoke;
+  border-radius: 50%;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -5,6 +5,6 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(to bottom right, map-get(variables.$colorVars, 'backgroundColorOne'), map-get(variables.$colorVars, 'backgroundColorTwo'));
+    background: linear-gradient(to bottom right, map-get(variables.$mainColors, 'backgroundColorOne'), map-get(variables.$mainColors, 'backgroundColorTwo'));
     flex-direction: column;
 }

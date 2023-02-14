@@ -1,0 +1,17 @@
+@use '../../abstracts/variables';
+
+.buttonWrapper {
+    width: 100%;
+    display: flex;
+
+}
+
+.save {
+    font-size: 100%;
+    height: min-content;
+    padding: 1rem 2rem;
+    background-color: map-get(variables.$save, 'saveButton');
+    color: map-get(variables.$save, 'saveButtonText');
+    border: none;
+    max-width: 20rem;
+}

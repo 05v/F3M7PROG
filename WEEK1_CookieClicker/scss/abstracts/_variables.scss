@@ -20,13 +20,24 @@ $tasksVars: (
     "listItemColor": #ECECEC
 );
 
-$colorVars: (
+$mainColors: (
     "backgroundColor": white,
     "textColor": black,
 
-    "cookieBackground": #6B4F4F,
-    "cookieSpots": #483434,
-
     "backgroundColorOne": #4B6587,
     "backgroundColorTwo": #8FC1D4,
+);
+
+$cookie: (
+    "cookieBackground": #6B4F4F,
+    "cookieSpots": #483434,
+);
+
+$upgrades: (
+    "backgroundColor": whitesmoke,
+);
+
+$save: (
+    "saveButton": #645CBB,
+    "saveButtonText": whitesmoke,
 );
