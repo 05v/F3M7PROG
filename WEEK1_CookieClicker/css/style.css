@@ -99,6 +99,31 @@ body {
   width: 12rem;
 }
 
+.upgradesMobile {
+  display: none;
+  list-style: none;
+  width: 100%;
+  justify-content: space-between;
+  grid-template-columns: 1fr 1fr 1fr;
+  aspect-ratio: 1/1;
+  gap: 2rem;
+  grid-template-rows: 5rem;
+  margin-top: 2rem;
+}
+.upgradesMobile__upgrade {
+  background-color: whitesmoke;
+  display: flex;
+  align-items: center;
+  border-radius: 1rem;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 80%;
+  transition: 0.2s all;
+}
+.upgradesMobile__upgrade:active {
+  transform: scale(0.9);
+}
+
 .upgrades {
   list-style: none;
   display: flex;
@@ -228,6 +253,9 @@ body {
   }
   .score {
     font-size: 200%;
+  }
+  .upgradesMobile {
+    display: grid;
   }
 }
 

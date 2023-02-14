@@ -1,5 +1,33 @@
 @use '../../abstracts/variables';
 
+.upgradesMobile {
+    display: none;
+    list-style: none;
+    width: 100%;
+    justify-content: space-between;
+    grid-template-columns: 1fr 1fr 1fr;
+    aspect-ratio: 1/1;
+    gap: 2rem;
+    grid-template-rows: 5rem;
+    margin-top: 2rem;
+
+    &__upgrade {
+        background-color: whitesmoke;
+        display: flex;
+        align-items: center;
+        border-radius: 1rem;
+        justify-content: center;
+        gap: 0.5rem;
+        font-size: 80%;
+        transition: 0.2s all;
+
+        &:active {
+            transform: scale(0.9);
+        }
+
+    }
+}
+
 .upgrades {
     list-style: none;
     display: flex;
@@ -40,6 +68,5 @@
             border-bottom-left-radius: 1rem;
             border-bottom-right-radius: 1rem;
         }
-
     }
 }
