@@ -9,20 +9,26 @@ class Cookie {
     this.score = newScore;
   }
 
-  onCookieClick() {
-    console.log("Clicked");
-  }
+  onCookieClick = () => {
+    this.score.onCookieClick();
+  };
 }
 
 class Score {
-  defaultScore = 0;
+  score = 0;
   name = "";
   htmlElement = undefined;
-  constructor(newDefaultScore, newName, newHTMLElement) {
-    this.defaultScore = newDefaultScore;
+  constructor(newScore, newName, newHTMLElement) {
+    this.score = newScore;
     this.name = newName;
     this.htmlElement = newHTMLElement;
-    this.htmlElement.innerText = newDefaultScore;
+    this.htmlElement.innerText = newScore;
+  }
+
+  onCookieClick() {
+    console.log("Cookie has been clicked");
+    this.score = this.score + 1;
+    this.htmlElement.innerText = this.score;
   }
 }
 
@@ -37,5 +43,3 @@ const cookie = new Cookie(
   document.getElementById("js--cookie"),
   score
 );
-
-cookie.score.htmlElement.style.background = "red";
