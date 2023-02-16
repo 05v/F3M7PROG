@@ -2,15 +2,16 @@ class Cookie {
   cookieType = "";
   htmlElement = undefined;
   score = undefined;
+  factor = 1;
   constructor(newCookieType, newHTMLElement, newScore) {
     this.cookieType = newCookieType;
     this.htmlElement = newHTMLElement;
-    this.htmlElement.onclick = this.onCookieClick;
+    this.htmlElement.onclick = this.onCookieClicked;
     this.score = newScore;
   }
 
-  onCookieClick = () => {
-    this.score.onCookieClick();
+  onCookieClicked = () => {
+    this.score.onCookieClicked(this.factor);
   };
 }
 
@@ -25,9 +26,9 @@ class Score {
     this.htmlElement.innerText = newScore;
   }
 
-  onCookieClick() {
+  onCookieClicked(factorFromCookie) {
     console.log("Cookie has been clicked");
-    this.score = this.score + 1;
+    this.score = this.score + factorFromCookie;
     this.htmlElement.innerText = this.score;
   }
 
@@ -38,18 +39,22 @@ class Score {
 }
 
 class Multiplier {
-  factor = 1;
+  factor = 2;
   htmlElement = undefined;
   cookie = undefined;
+  bought = false;
   constructor(newHTMLElement, cookie) {
     this.htmlElement = newHTMLElement;
     this.cookie = cookie;
-    this.htmlElement.onclick = this.onMultiplierClick;
+    this.htmlElement.onclick = this.onMultiplierClicked;
   }
 
-  onMultiplierClick = () => {
-    console.log("Multiplier button clicked");
-    this.cookie.score.subtractScore();
+  onMultiplierClicked = () => {
+    if (this.bought === false) {
+      this.bought = true;
+      this.cookie.score.subtractScore();
+      this.cookie.factor = this.factor;
+    }
   };
 }
 
