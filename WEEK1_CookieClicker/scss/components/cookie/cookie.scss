@@ -1,7 +1,7 @@
 @use '../../abstracts/variables';
 
 .cookie {
-    width: 40rem;
+    width: 35rem;
     aspect-ratio: 1/1;
     background: map-get(variables.$cookie, "cookieBackground");
     border-radius: 50%;
