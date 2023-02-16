@@ -1,10 +1,12 @@
 class Cookie {
   cookieType = "";
   htmlElement = undefined;
-  constructor(newCookieType, newHTMLElement) {
+  score = undefined;
+  constructor(newCookieType, newHTMLElement, newScore) {
     this.cookieType = newCookieType;
     this.htmlElement = newHTMLElement;
     this.htmlElement.onclick = this.onCookieClick;
+    this.score = newScore;
   }
 
   onCookieClick() {
@@ -24,13 +26,16 @@ class Score {
   }
 }
 
-const cookie = new Cookie(
-  "Default Cookie",
-  document.getElementById("js--cookie")
-);
 const score = new Score(
   0,
   "Default Score",
   document.getElementById("js--score")
 );
-console.log(cookie, score);
+
+const cookie = new Cookie(
+  "Default Cookie",
+  document.getElementById("js--cookie"),
+  score
+);
+
+cookie.score.htmlElement.style.background = "red";
