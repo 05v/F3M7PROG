@@ -41,7 +41,7 @@ class Score {
     setInterval(() => {
       this.score = this.score + 500;
       this.htmlElement.innerText = this.score;
-    }, 1000);
+    }, 10000);
   }
 }
 
@@ -79,6 +79,7 @@ class autoScore {
   onAutoScoreClicked = () => {
     if (this.bought === false) {
       this.bought = true;
+      this.score.subtractScore();
       score.onAutoScoreClicked();
     }
   };
