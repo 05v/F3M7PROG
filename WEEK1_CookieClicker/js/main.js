@@ -16,12 +16,14 @@ class Cookie {
 
   onGoldStyleChange() {
     this.htmlElement.classList.add("cookie--gold");
+    this.htmlElement.classList.remove("cookie--velvet");
     setInterval(() => {
       this.htmlElement.classList.remove("cookie--gold");
     }, 5000);
   }
 
   onVelvetStyleChange() {
+    this.htmlElement.classList.remove("cookie--gold");
     this.htmlElement.classList.add("cookie--velvet");
     setInterval(() => {
       this.htmlElement.classList.remove("cookie--velvet");
@@ -190,5 +192,10 @@ const autoMobile = new autoScore(
 
 const goldMobile = new GoldenCookie(
   document.getElementById("js--goldenCookie--mobile"),
+  cookie
+);
+
+const velvetMobile = new VelvetCookie(
+  document.getElementById("js--velvetCookie--mobile"),
   cookie
 );

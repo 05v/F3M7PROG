@@ -133,6 +133,7 @@ body {
   justify-content: center;
   gap: 0.5rem;
   font-size: 80%;
+  height: 5rem;
   transition: 0.2s all;
 }
 .upgradesMobile__upgrade:active {
