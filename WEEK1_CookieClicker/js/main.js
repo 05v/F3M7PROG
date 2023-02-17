@@ -14,8 +14,18 @@ class Cookie {
     this.score.onCookieClicked(this.factor);
   };
 
-  onStyleChange() {
+  onGoldStyleChange() {
     this.htmlElement.classList.add("cookie--gold");
+    setInterval(() => {
+      this.htmlElement.classList.remove("cookie--gold");
+    }, 5000);
+  }
+
+  onVelvetStyleChange() {
+    this.htmlElement.classList.add("cookie--velvet");
+    setInterval(() => {
+      this.htmlElement.classList.remove("cookie--velvet");
+    }, 5000);
   }
 }
 
@@ -31,7 +41,6 @@ class Score {
   }
 
   onCookieClicked(factorFromCookie) {
-    console.log("Cookie has been clicked");
     this.score = this.score + factorFromCookie;
     this.htmlElement.innerText = this.score;
   }
@@ -108,11 +117,33 @@ class GoldenCookie {
   onGoldenCookieClicked = () => {
     if (this.bought === false) {
       this.bought = true;
-      this.cookie.onStyleChange();
+      this.cookie.onGoldStyleChange();
       this.cookie.score.addScore();
     }
   };
 }
+
+class VelvetCookie {
+  htmlElement = undefined;
+  bought = false;
+  cookie = undefined;
+
+  constructor(htmlElement, cookie) {
+    this.htmlElement = htmlElement;
+    this.cookie = cookie;
+    this.htmlElement.onclick = this.onVelvetCookieClicked;
+  }
+
+  onVelvetCookieClicked = () => {
+    if (this.bought === false) {
+      this.bought = true;
+      this.cookie.onVelvetStyleChange();
+      this.cookie.score.addScore();
+    }
+  };
+}
+
+// Setup for score and cookie
 
 const score = new Score(
   0,
@@ -126,6 +157,8 @@ const cookie = new Cookie(
   score
 );
 
+// Setup for desktop upgrades
+
 const multiplier = new Multiplier(
   document.getElementById("js--multiplier"),
   cookie
@@ -135,5 +168,27 @@ const auto = new autoScore(document.getElementById("js--autoScore"), score);
 
 const gold = new GoldenCookie(
   document.getElementById("js--goldenCookie"),
+  cookie
+);
+
+const velvet = new VelvetCookie(
+  document.getElementById("js--velvetCookie"),
+  cookie
+);
+
+// Setup for mobile upgrades
+
+const multiplierMobile = new Multiplier(
+  document.getElementById("js--multiplier--mobile"),
+  cookie
+);
+
+const autoMobile = new autoScore(
+  document.getElementById("js--autoScore--mobile"),
+  score
+);
+
+const goldMobile = new GoldenCookie(
+  document.getElementById("js--goldenCookie--mobile"),
   cookie
 );
