@@ -36,6 +36,13 @@ class Score {
     this.score = this.score - 100;
     this.htmlElement.innerText = this.score;
   }
+
+  onAutoScoreClicked() {
+    setInterval(() => {
+      this.score = this.score + 500;
+      this.htmlElement.innerText = this.score;
+    }, 1000);
+  }
 }
 
 class Multiplier {
@@ -58,6 +65,25 @@ class Multiplier {
   };
 }
 
+class autoScore {
+  htmlElement = undefined;
+  score = undefined;
+  bought = false;
+
+  constructor(htmlElement, score) {
+    this.htmlElement = htmlElement;
+    this.score = score;
+    this.htmlElement.onclick = this.onAutoScoreClicked;
+  }
+
+  onAutoScoreClicked = () => {
+    if (this.bought === false) {
+      this.bought = true;
+      score.onAutoScoreClicked();
+    }
+  };
+}
+
 const score = new Score(
   0,
   "Default Score",
@@ -74,4 +100,6 @@ const multiplier = new Multiplier(
   document.getElementById("js--multiplier"),
   cookie
 );
-console.log(multiplier);
+
+const auto = new autoScore(document.getElementById("js--autoScore"), score);
+console.log(auto);
