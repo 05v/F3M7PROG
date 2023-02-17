@@ -13,6 +13,10 @@ class Cookie {
   onCookieClicked = () => {
     this.score.onCookieClicked(this.factor);
   };
+
+  onStyleChange() {
+    console.log("I change");
+  }
 }
 
 class Score {
@@ -85,6 +89,25 @@ class autoScore {
   };
 }
 
+class GoldenCookie {
+  htmlElement = undefined;
+  bought = false;
+  cookie = undefined;
+
+  constructor(htmlElement, cookie) {
+    this.htmlElement = htmlElement;
+    this.cookie = cookie;
+    this.htmlElement.onclick = this.onGoldenCookieClicked;
+  }
+
+  onGoldenCookieClicked = () => {
+    if (this.bought === false) {
+      this.bought = true;
+      this.cookie.onStyleChange();
+    }
+  };
+}
+
 const score = new Score(
   0,
   "Default Score",
@@ -103,4 +126,8 @@ const multiplier = new Multiplier(
 );
 
 const auto = new autoScore(document.getElementById("js--autoScore"), score);
-console.log(auto);
+
+const gold = new GoldenCookie(
+  document.getElementById("js--goldenCookie"),
+  cookie
+);
