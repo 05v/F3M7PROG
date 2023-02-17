@@ -20,6 +20,25 @@
         transform: scale(0.95);
     }
 
+    &--gold {
+        border: 0.8rem solid map-get(variables.$cookie, "goldCookieSpots");
+        background-color: map-get(variables.$cookie, "goldCookieBackground");
+        box-shadow: none;
+    }
+
+    &--gold &__spots {
+        background-color: map-get(variables.$cookie, "goldCookieSpots");
+    }
+
+    &--velvet {
+        border: 0.8rem solid map-get(variables.$cookie, "velvetCookieSpots");
+        background-color: map-get(variables.$cookie, "velvetCookieBackground");
+    }
+
+    &--velvet &__spots {
+        background-color: map-get(variables.$cookie, "velvetCookieSpots");
+    }
+
     &__spots {
         width: 10rem;
         aspect-ratio: 1/1;
@@ -68,5 +87,7 @@
             left: 70%;
             width: 12rem;
         }
+
+
     }
 }

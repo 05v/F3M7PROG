@@ -56,6 +56,21 @@ body {
 .cookie:active {
   transform: scale(0.95);
 }
+.cookie--gold {
+  border: 0.8rem solid #998400;
+  background-color: #c4a414;
+  box-shadow: none;
+}
+.cookie--gold .cookie__spots {
+  background-color: #998400;
+}
+.cookie--velvet {
+  border: 0.8rem solid #ffd7d7;
+  background-color: #c41414;
+}
+.cookie--velvet .cookie__spots {
+  background-color: #ffd7d7;
+}
 .cookie__spots {
   width: 10rem;
   aspect-ratio: 1/1;

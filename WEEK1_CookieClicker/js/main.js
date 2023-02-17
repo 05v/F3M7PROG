@@ -15,7 +15,7 @@ class Cookie {
   };
 
   onStyleChange() {
-    console.log("I change");
+    this.htmlElement.classList.add("cookie--gold");
   }
 }
 
@@ -38,6 +38,11 @@ class Score {
 
   subtractScore() {
     this.score = this.score - 100;
+    this.htmlElement.innerText = this.score;
+  }
+
+  addScore() {
+    this.score = this.score + 10000;
     this.htmlElement.innerText = this.score;
   }
 
@@ -104,6 +109,7 @@ class GoldenCookie {
     if (this.bought === false) {
       this.bought = true;
       this.cookie.onStyleChange();
+      this.cookie.score.addScore();
     }
   };
 }
