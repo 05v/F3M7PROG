@@ -66,6 +66,9 @@ body {
   .colors__color {
     width: 18rem;
   }
+  .colors__color:hover .colors__circle {
+    transform: none;
+  }
 }
 /* Mobile Responsive */
 @media screen and (max-width: 50rem) {

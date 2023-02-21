@@ -11,6 +11,10 @@
         &__color {
             width: 18rem;
         }
+
+        &__color:hover &__circle {
+            transform: none;
+        }
     }
 }
 
