@@ -1,0 +1,17 @@
+@use '../../abstracts/variables';
+
+.colors {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    list-style: none;
+    background: whitesmoke;
+    padding: 4rem;
+
+    &__color {
+        width: 22rem;
+        flex-grow: 1;
+        aspect-ratio: 1/1;
+        background: gray;
+    }
+}

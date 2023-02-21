@@ -16,6 +16,23 @@ body {
 
 body {
   min-height: 100vh;
+  padding: 4rem;
+  background: linear-gradient(to bottom right, #443C68, #393053);
+}
+
+.colors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  list-style: none;
+  background: whitesmoke;
+  padding: 4rem;
+}
+.colors__color {
+  width: 22rem;
+  flex-grow: 1;
+  aspect-ratio: 1/1;
+  background: gray;
 }
 
 /*# sourceMappingURL=style.css.map */
