@@ -1,0 +1,28 @@
+/* 4k Screen Responsive */
+@media screen and (max-width: 400rem) {
+    .colors {
+        max-width: 150rem;
+    }
+}
+
+/* iPad/Tablet Responsive */
+@media screen and (max-width: 62.5rem) {
+    .colors {
+        &__color {
+            width: 18rem;
+        }
+    }
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 50rem) {
+    body {
+        padding: 0;
+    }
+
+    .colors {
+        &__color {
+            width: 12rem;
+        }
+    }
+}

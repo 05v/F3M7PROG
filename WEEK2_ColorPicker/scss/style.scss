@@ -1,4 +1,8 @@
 @use 'abstracts/reset';
 @use 'base';
 
-@use './components/colors/colors'
+/* Components */
+@use './components/colors/colors';
+
+/* Mediaqueries */
+@use './abstracts/mediaqueries'

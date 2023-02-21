@@ -18,6 +18,9 @@ body {
   min-height: 100vh;
   padding: 4rem;
   background: linear-gradient(to bottom right, #443C68, #393053);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .colors {
@@ -34,5 +37,29 @@ body {
   aspect-ratio: 1/1;
   background: gray;
 }
+
+/* 4k Screen Responsive */
+@media screen and (max-width: 400rem) {
+  .colors {
+    max-width: 150rem;
+  }
+}
+/* iPad/Tablet Responsive */
+@media screen and (max-width: 62.5rem) {
+  .colors__color {
+    width: 18rem;
+  }
+}
+/* Mobile Responsive */
+@media screen and (max-width: 50rem) {
+  body {
+    padding: 0;
+  }
+  .colors__color {
+    width: 12rem;
+  }
+}
+/* Components */
+/* Mediaqueries */
 
 /*# sourceMappingURL=style.css.map */
