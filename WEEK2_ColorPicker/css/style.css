@@ -35,7 +35,24 @@ body {
   width: 22rem;
   flex-grow: 1;
   aspect-ratio: 1/1;
-  background: gray;
+  background: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0.2rem solid rgba(128, 128, 128, 0.25);
+  border-radius: 0.5rem;
+}
+.colors__color:hover .colors__circle {
+  cursor: pointer;
+  transform: scale(1.15);
+}
+.colors__circle {
+  width: 50%;
+  height: 50%;
+  background-color: #635985;
+  border-radius: 50%;
+  transition: 0.2s transform;
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 /* 4k Screen Responsive */
