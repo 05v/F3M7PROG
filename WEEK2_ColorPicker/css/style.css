@@ -76,6 +76,10 @@ body {
   transform: translate(-50%, -50%);
   animation-name: popup;
   animation-duration: 0.6s;
+  display: none;
+}
+.colors__circle--selected + .colors__text {
+  display: block;
 }
 
 /* 4k Screen Responsive */

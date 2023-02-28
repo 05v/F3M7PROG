@@ -47,5 +47,10 @@
         transform: translate(-50%, -50%);
         animation-name: popup;
         animation-duration: 0.6s;
+        display: none;
+    }
+
+    &__circle--selected+&__text {
+        display: block;
     }
 }
