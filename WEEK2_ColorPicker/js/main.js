@@ -1,5 +1,7 @@
-const color = document.getElementById("js--color--1");
+const colors = document.getElementsByClassName("colors__color");
 
-color.onclick = function () {
-  color.children[0].classList.add("colors__circle--selected");
-};
+for (let i = 0; i < colors.length; i++) {
+  colors[i].onclick = function () {
+    colors[i].children[0].classList.add("colors__circle--selected");
+  };
+}
