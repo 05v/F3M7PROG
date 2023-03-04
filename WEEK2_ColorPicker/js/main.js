@@ -49,8 +49,16 @@ class ColorCard {
   }
 }
 
-const test = new ColorCard(
-  101,
-  "hsl(284,52%,36%)",
-  document.getElementById("js--colors")
-);
+for (let i = 1; i < 101; i++) {
+  // Number 1-360, the Hue
+  let randomHue = Math.floor(Math.random() * (360 - 1) + 1);
+
+  // Percentage 11-79, the Saturation
+  let randomSaturation = Math.floor(Math.random() * (79 - 11) + 11) + "%";
+
+  // Percentage 11-100, the Brightness
+  let randomBrightness = Math.floor(Math.random() * (100 - 11) + 11) + "%";
+
+  let hsl = `hsl(${randomHue} ${randomSaturation} ${randomBrightness})`;
+  new ColorCard(i, hsl, document.getElementById("js--colors"));
+}
