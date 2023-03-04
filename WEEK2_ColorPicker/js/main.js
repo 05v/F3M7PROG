@@ -1,6 +1,10 @@
 class ColorCard {
   id;
   color;
+  addToList;
+  htmlElement;
+  circle;
+
   constructor(newId, newColor, addToList) {
     // Setting properties
     this.id = newId;
@@ -11,30 +15,32 @@ class ColorCard {
     this.htmlElement = document.createElement("li");
     this.htmlElement.classList = "colors__color";
 
-    // Creates <figure> with class 'colors__circle' and adds it to the <li>
-    const figureToBeRendered = document.createElement("figure");
-    figureToBeRendered.classList = "colors__circle";
-    figureToBeRendered.style.background = this.color;
-    this.htmlElement.appendChild(figureToBeRendered);
+    // Creates <figure> with class 'colors__circle'
+    this.circle = document.createElement("figure");
+    this.circle.classList = "colors__circle";
+    this.circle.style.background = this.color;
 
-    // Creates <p> with class 'colors__text' with the text Copied in it and adds it to the <li>
-    const pToBeRendered = document.createElement("p");
-    pToBeRendered.classList = "colors__text";
-    pToBeRendered.innerText = "Copied";
-    this.htmlElement.appendChild(pToBeRendered);
+    // Creates <p> with class 'colors__text' with the text 'Copied' in it
+    this.text = document.createElement("p");
+    this.text.classList = "colors__text";
+    this.text.innerText = "Copied";
 
-    //
-    this.htmlElement.onclick = this.onHTMLElementClicked();
+    // If you click a <li> it will run the function onHTMLElementClicked
+    this.htmlElement.onclick = this.onHTMLElementClicked;
 
+    // It will add the <li> to the <ul>
     this.render();
   }
 
-  onHTMLElementClicked = function () {
-    console.log("I clicked" + this.color);
+  onHTMLElementClicked = () => {
+    // Adds the selected class to the circle once the item is clicked (this makes the color big)
+    this.circle.classList.add("colors__circle--selected");
   };
 
   render() {
-    // Adds the <li> with all it's children elements into the <ul>
+    // Adds the <figure> and <p> elements into the <li>
+    this.htmlElement.appendChild(this.circle);
+    this.htmlElement.appendChild(this.text);
     this.addToList.appendChild(this.htmlElement);
   }
 }
