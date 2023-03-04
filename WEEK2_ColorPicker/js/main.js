@@ -49,6 +49,21 @@ class ColorCard {
   }
 }
 
+class ColorList {
+  id;
+  newHTMLElement;
+
+  constructor(newId) {
+    this.id = newId;
+    this.htmlElement = document.createElement("ul");
+    this.htmlElement.id = this.id;
+    this.htmlElement.classList.add("colors");
+    document.querySelector("body").appendChild(this.htmlElement);
+  }
+}
+
+const colorList = new ColorList("js--colors");
+
 for (let i = 1; i < 101; i++) {
   // Number 1-360, the Hue
   let randomHue = Math.floor(Math.random() * (360 - 1) + 1);
