@@ -13,6 +13,7 @@ class ColorCard {
 
     const figureToBeRendered = document.createElement("figure");
     figureToBeRendered.classList = "colors__circle";
+    figureToBeRendered.style.background = this.color;
 
     const pToBeRendered = document.createElement("p");
     pToBeRendered.classList = "colors__text";
@@ -26,7 +27,7 @@ class ColorCard {
 
 const test = new ColorCard(
   101,
-  "rgba(0,0,0,0)",
+  "rgba(255,0,0,1)",
   document.getElementById("js--colors")
 );
 
