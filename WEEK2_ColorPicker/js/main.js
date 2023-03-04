@@ -55,13 +55,18 @@ class ColorList {
 
   constructor(newId) {
     this.id = newId;
+
+    // Create the <ul> element and give it the appropriate id and class
     this.htmlElement = document.createElement("ul");
     this.htmlElement.id = this.id;
     this.htmlElement.classList.add("colors");
+
+    // Render the list (add the new <ul> to the body)
     this.render();
   }
 
   render() {
+    // Add the new <ul> to the body
     document.querySelector("body").appendChild(this.htmlElement);
   }
 }
@@ -92,13 +97,37 @@ class HSLGenerator {
     this.generateSaturation();
     this.generateLightness();
 
+    // Sets the values of hsl(value, value, value)
     this.hsl = `hsl(${this.randomHue} ${this.randomSaturation} ${this.randomBrightness})`;
   };
 }
 
-let generator = new HSLGenerator();
-let list = new ColorList("js--list");
+class App {
+  colorList;
+  hslGenerator;
 
-// const colorList = new ColorList("js--colors");
-// for (let i = 1; i < 101; i++) {}
-// new ColorCard(i, hsl, document.getElementById("js--colors"));
+  constructor(newId) {
+    this.id = newId;
+    this.colorList = new ColorList(this.id);
+    this.hslGenerator = new HSLGenerator();
+    // Call generateColorCards function to create 100 instances of ColorCard
+    this.generateColorCards();
+  }
+
+  generateColorCards = function () {
+    // loop from 1 to 100 to create 100 instances
+    for (let i = 1; i < 101; i++) {
+      // Call the generateHSL function to set the values of hsl(value, value, value) every time the for loop runs
+      this.hslGenerator.generateHSL();
+      // create a new instance of `ColorCard`
+      new ColorCard(
+        i,
+        this.hslGenerator.hsl,
+        document.getElementById(this.colorList.id)
+      );
+    }
+  };
+}
+
+// Runs the full code
+const app = new App("js--app");
