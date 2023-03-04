@@ -4,6 +4,7 @@ class ColorCard {
   addToList;
   htmlElement;
   circle;
+  text;
 
   constructor(newId, newColor, addToList) {
     // Setting properties
@@ -35,6 +36,9 @@ class ColorCard {
   onHTMLElementClicked = () => {
     // Adds the selected class to the circle once the item is clicked (this makes the color big)
     this.circle.classList.add("colors__circle--selected");
+    // Changes
+    document.title = this.color;
+    window.navigator.clipboard.writeText(this.color);
   };
 
   render() {
@@ -47,6 +51,6 @@ class ColorCard {
 
 const test = new ColorCard(
   101,
-  "rgba(255,0,0,1)",
+  "hsl(284,52%,36%)",
   document.getElementById("js--colors")
 );
