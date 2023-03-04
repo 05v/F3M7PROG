@@ -58,22 +58,47 @@ class ColorList {
     this.htmlElement = document.createElement("ul");
     this.htmlElement.id = this.id;
     this.htmlElement.classList.add("colors");
+    this.render();
+  }
+
+  render() {
     document.querySelector("body").appendChild(this.htmlElement);
   }
 }
 
-const colorList = new ColorList("js--colors");
+class HSLGenerator {
+  randomHue;
+  randomSaturation;
+  randomLightness;
+  hsl;
+  constructor() {
+    this.generateHSL();
+  }
 
-for (let i = 1; i < 101; i++) {
-  // Number 1-360, the Hue
-  let randomHue = Math.floor(Math.random() * (360 - 1) + 1);
+  generateHue = function () {
+    // Number 1-360, the Hue
+    this.randomHue = Math.floor(Math.random() * (360 - 1) + 1);
+  };
+  generateSaturation = function () {
+    // Percentage 11-79, the Saturation
+    this.randomSaturation = Math.floor(Math.random() * (79 - 11) + 11) + "%";
+  };
+  generateLightness = function () {
+    // Percentage 11-100, the Brightness
+    this.randomBrightness = Math.floor(Math.random() * (100 - 11) + 11) + "%";
+  };
+  generateHSL = function () {
+    this.generateHue();
+    this.generateSaturation();
+    this.generateLightness();
 
-  // Percentage 11-79, the Saturation
-  let randomSaturation = Math.floor(Math.random() * (79 - 11) + 11) + "%";
-
-  // Percentage 11-100, the Brightness
-  let randomBrightness = Math.floor(Math.random() * (100 - 11) + 11) + "%";
-
-  let hsl = `hsl(${randomHue} ${randomSaturation} ${randomBrightness})`;
-  new ColorCard(i, hsl, document.getElementById("js--colors"));
+    this.hsl = `hsl(${this.randomHue} ${this.randomSaturation} ${this.randomBrightness})`;
+  };
 }
+
+let generator = new HSLGenerator();
+let list = new ColorList("js--list");
+
+// const colorList = new ColorList("js--colors");
+// for (let i = 1; i < 101; i++) {}
+// new ColorCard(i, hsl, document.getElementById("js--colors"));
