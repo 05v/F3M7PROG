@@ -1,0 +1,21 @@
+@use '../../abstracts/variables';
+
+.save {
+    font-size: 100%;
+    height: min-content;
+    padding: 1rem 2rem;
+    background-color: map-get(variables.$save, 'saveButton');
+    color: map-get(variables.$save, 'saveButtonText');
+    border: none;
+    max-width: 20rem;
+    transform: translateY(2.5rem);
+    border-radius: 0.5rem;
+    transition: 0.2s all;
+
+    &:hover {
+        cursor: pointer;
+        background-color: map-get(variables.$save, 'saveButtonHover');
+        color: map-get(variables.$save, 'saveButtonTextHover');
+    }
+
+}

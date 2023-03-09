@@ -1,0 +1,52 @@
+$backgroundColor: #4649FF;
+
+$fontVars: (
+    "color": black,
+
+    "fancyFont": 'Playfair Display',
+    "normalFont": 'Open Sans',
+
+    "h2FontSize": 2.4rem,
+    "mediumFontSize": 1.9rem,
+    "smallerFontSize": 1.6rem,
+    "headerFontSize": 1.4rem,
+
+    "boldFontWeight": 700
+);
+
+$tasksVars: (
+    "background":#DDDDDD,
+    "specialFontColor": #eee,
+    "listItemColor": #ECECEC
+);
+
+$mainColors: (
+    "backgroundColor": white,
+    "textColor": black,
+
+    "backgroundColorOne": #4B6587,
+    "backgroundColorTwo": #8FC1D4,
+);
+
+$cookie: (
+    "cookieBackground": #6B4F4F,
+    "cookieSpots": #483434,
+
+    "goldCookieBackground": #c4a414,
+    "goldCookieSpots": #998400,
+
+    "velvetCookieBackground": #c41414,
+    "velvetCookieSpots": #ffd7d7,
+);
+
+$upgrades: (
+    "backgroundColor": whitesmoke,
+);
+
+$save: (
+    "saveButton": #483434,
+    "saveButtonText": whitesmoke,
+
+    "saveButtonHover": #6B4F4F,
+    "saveButtonTextHover": whitesmoke,
+);
