@@ -145,6 +145,20 @@ class VelvetCookie {
   };
 }
 
+class Save {
+  htmlElement;
+
+  constructor(newHTMLElement) {
+    this.htmlElement = newHTMLElement;
+    this.htmlElement.onclick = this.onSaveButtonClicked;
+  }
+
+  onSaveButtonClicked = () => {
+    window.localStorage.setItem("score", score.score);
+    console.log(window.localStorage);
+  };
+}
+
 // Setup for score and cookie
 
 const score = new Score(
@@ -178,6 +192,8 @@ const velvet = new VelvetCookie(
   cookie
 );
 
+const save = new Save(document.getElementById("js--save"));
+console.log(save);
 // Setup for mobile upgrades
 
 const multiplierMobile = new Multiplier(
