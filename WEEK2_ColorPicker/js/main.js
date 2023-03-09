@@ -110,7 +110,7 @@ class App {
     this.id = newId;
     this.colorList = new ColorList(this.id);
     this.hslGenerator = new HSLGenerator();
-    // Call generateColorCards function to create 100 instances of ColorCard
+    this.colors = []; // Call generateColorCards function to create 100 instances of ColorCard
     this.generateColorCards();
   }
 
@@ -120,10 +120,12 @@ class App {
       // Call the generateHSL function to set the values of hsl(value, value, value) every time the for loop runs
       this.hslGenerator.generateHSL();
       // create a new instance of `ColorCard`
-      new ColorCard(
-        i,
-        this.hslGenerator.hsl,
-        document.getElementById(this.colorList.id)
+      this.colors.push(
+        new ColorCard(
+          i,
+          this.hslGenerator.hsl,
+          document.getElementById(this.colorList.id)
+        )
       );
     }
   };
