@@ -63,6 +63,11 @@ class Score {
       this.htmlElement.innerText = this.score;
     }, 10000);
   }
+
+  scoreLoaded(newScore) {
+    this.score = newScore;
+    this.htmlElement.innerText = this.score;
+  }
 }
 
 class Multiplier {
@@ -74,15 +79,27 @@ class Multiplier {
     this.htmlElement = newHTMLElement;
     this.cookie = cookie;
     this.htmlElement.onclick = this.onMultiplierClicked;
+    this.multiplierClickCheck();
   }
 
   onMultiplierClicked = () => {
-    if (this.bought === false) {
-      this.bought = true;
+    if (
+      this.bought === false &&
+      window.localStorage.getItem("multiplierBought") !== "true"
+    ) {
       this.cookie.score.subtractScore();
       this.cookie.factor = this.factor;
+      this.bought = true;
+      window.localStorage.setItem("multiplierBought", this.bought);
     }
   };
+
+  multiplierClickCheck() {
+    if (window.localStorage.getItem("multiplierBought") === "true") {
+      this.bought === true;
+      this.cookie.factor = this.factor;
+    }
+  }
 }
 
 class autoScore {
@@ -94,15 +111,27 @@ class autoScore {
     this.htmlElement = htmlElement;
     this.score = score;
     this.htmlElement.onclick = this.onAutoScoreClicked;
+    this.autoScoreClickCheck();
   }
 
   onAutoScoreClicked = () => {
-    if (this.bought === false) {
-      this.bought = true;
+    if (
+      this.bought === false &&
+      window.localStorage.getItem("autoScoreBought") !== "true"
+    ) {
       this.score.subtractScore();
       score.onAutoScoreClicked();
+      this.bought = true;
+      window.localStorage.setItem("autoScoreBought", this.bought);
     }
   };
+
+  autoScoreClickCheck() {
+    if (window.localStorage.getItem("autoScoreBought") === "true") {
+      this.bought === true;
+      score.onAutoScoreClicked();
+    }
+  }
 }
 
 class GoldenCookie {
@@ -117,10 +146,14 @@ class GoldenCookie {
   }
 
   onGoldenCookieClicked = () => {
-    if (this.bought === false) {
-      this.bought = true;
-      this.cookie.onGoldStyleChange();
+    if (
+      this.bought === false &&
+      window.localStorage.getItem("goldCookie") !== "true"
+    ) {
       this.cookie.score.addScore();
+      this.cookie.onGoldStyleChange();
+      this.bought = true;
+      window.localStorage.setItem("goldCookie", this.bought);
     }
   };
 }
@@ -137,10 +170,14 @@ class VelvetCookie {
   }
 
   onVelvetCookieClicked = () => {
-    if (this.bought === false) {
-      this.bought = true;
-      this.cookie.onVelvetStyleChange();
+    if (
+      this.bought === false &&
+      window.localStorage.getItem("velvetCookie") !== "true"
+    ) {
       this.cookie.score.addScore();
+      this.cookie.onVelvetStyleChange();
+      this.bought = true;
+      window.localStorage.setItem("velvetCookie", this.bought);
     }
   };
 }
@@ -155,7 +192,23 @@ class Save {
 
   onSaveButtonClicked = () => {
     window.localStorage.setItem("score", score.score);
-    console.log(window.localStorage);
+  };
+}
+
+class Load {
+  score;
+
+  constructor(score) {
+    this.score = score;
+
+    this.onLoad();
+  }
+
+  onLoad = function () {
+    const scoreFromLocalStorage = window.localStorage.getItem("score");
+    if (scoreFromLocalStorage !== null) {
+      this.score.scoreLoaded(parseInt(scoreFromLocalStorage));
+    }
   };
 }
 
@@ -194,6 +247,9 @@ const velvet = new VelvetCookie(
 
 const save = new Save(document.getElementById("js--save"));
 console.log(save);
+
+const load = new Load(score);
+
 // Setup for mobile upgrades
 
 const multiplierMobile = new Multiplier(
