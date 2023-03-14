@@ -3,12 +3,10 @@
 .banky {
     background-color: white;
     min-height: calc(100vh - map-get(variables.$vhCalculation, "headerHeight") - map-get(variables.$vhCalculation, "bodyPadding") * 2);
-    display: flex;
+    display: grid;
+    grid-template-columns: 35% 65%;
     padding: 2rem;
 
-    &__section {
-        width: 50%;
-    }
 
     &__header {
         display: flex;
@@ -37,5 +35,26 @@
 
     &__transactions {
         list-style: none;
+        padding-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    &__transaction {
+        display: flex;
+        font-size: 120%;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__name {
+        font-weight: 300;
+        font-size: 120%;
+    }
+
+    &__amount {
+        font-weight: 300;
+        font-size: 120%;
     }
 }

@@ -28,11 +28,9 @@ body {
 .banky {
   background-color: white;
   min-height: calc(100vh - 8rem - 8rem);
-  display: flex;
+  display: grid;
+  grid-template-columns: 35% 65%;
   padding: 2rem;
-}
-.banky__section {
-  width: 50%;
 }
 .banky__header {
   display: flex;
@@ -57,6 +55,24 @@ body {
 }
 .banky__transactions {
   list-style: none;
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.banky__transaction {
+  display: flex;
+  font-size: 120%;
+  align-items: center;
+  justify-content: space-between;
+}
+.banky__name {
+  font-weight: 300;
+  font-size: 120%;
+}
+.banky__amount {
+  font-weight: 300;
+  font-size: 120%;
 }
 
 /*# sourceMappingURL=style.css.map */
