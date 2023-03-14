@@ -15,6 +15,7 @@ body {
 }
 
 body {
+  font-family: "Open Sans", sans-serif;
   background: linear-gradient(to bottom right, #AA77FF, 30%, #66347F);
   min-height: 100vh;
   padding: 4rem;
@@ -34,24 +35,39 @@ body {
 }
 .banky__header {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.banky__header > div {
+  display: flex;
   gap: 1rem;
   align-items: center;
 }
 .banky__money {
   font-weight: 400;
-  font-size: 250%;
+  font-size: 200%;
 }
 .banky__logo {
   width: 5rem;
   height: 5rem;
-  background-color: #66347F;
+  background: linear-gradient(to bottom right, #AA77FF, 30%, #66347F);
   border-radius: 50%;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
 }
 .banky__eye {
-  width: 5rem;
-  height: 5rem;
-  background-color: #66347F;
+  width: 3rem;
+  height: 3rem;
+  background: linear-gradient(to bottom right, #AA77FF, 30%, #66347F);
   border-radius: 50%;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
 }
 .banky__transactions {
   list-style: none;

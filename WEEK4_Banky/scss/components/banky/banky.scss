@@ -10,27 +10,43 @@
 
     &__header {
         display: flex;
-        gap: 1rem;
         align-items: center;
+        justify-content: space-between;
+
+        &>div {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
     }
 
     &__money {
         font-weight: 400;
-        font-size: 250%;
+        font-size: 200%;
     }
 
     &__logo {
         width: 5rem;
         height: 5rem;
-        background-color: map-get(variables.$logoColors, "colorTwo");
+        background: linear-gradient(to bottom right, map-get(variables.$baseColors, "background"), 30%, map-get(variables.$baseColors, "backgroundDark"));
         border-radius: 50%;
+        font-size: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
     }
 
     &__eye {
-        width: 5rem;
-        height: 5rem;
-        background-color: map-get(variables.$logoColors, "colorTwo");
+        width: 3rem;
+        height: 3rem;
+        background: linear-gradient(to bottom right, map-get(variables.$baseColors, "background"), 30%, map-get(variables.$baseColors, "backgroundDark"));
         border-radius: 50%;
+        font-size: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
     }
 
     &__transactions {
