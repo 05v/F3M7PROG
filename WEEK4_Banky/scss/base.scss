@@ -3,5 +3,5 @@
 body {
     background: linear-gradient(to bottom right, map-get(variables.$baseColors, "background"), 30%, map-get(variables.$baseColors, "backgroundDark"));
     min-height: 100vh;
-    padding: 4rem;
+    padding: map-get(variables.$vhCalculation, "bodyPadding");
 }

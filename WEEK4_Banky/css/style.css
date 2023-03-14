@@ -28,6 +28,10 @@ body {
 .banky {
   background-color: white;
   min-height: calc(100vh - 10rem - 8rem);
+  display: flex;
+}
+.banky__section {
+  width: 50%;
 }
 
 /*# sourceMappingURL=style.css.map */

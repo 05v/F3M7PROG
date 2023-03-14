@@ -1,5 +1,6 @@
+@use '../../abstracts/variables';
+
 .header {
     background-color: white;
-
-    height: 10rem;
+    height: map-get(variables.$vhCalculation, "headerHeight");
 }
