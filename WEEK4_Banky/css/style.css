@@ -1,0 +1,33 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 2rem;
+}
+
+body {
+  background: linear-gradient(to bottom right, #AA77FF, 30%, #66347F);
+  min-height: 100vh;
+  padding: 4rem;
+}
+
+.header {
+  background-color: white;
+  height: 10rem;
+}
+
+.banky {
+  background-color: white;
+  min-height: calc(100vh - 10rem - 8rem);
+}
+
+/*# sourceMappingURL=style.css.map */

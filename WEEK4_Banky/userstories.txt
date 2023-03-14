@@ -1,0 +1,31 @@
+***USER STORY 1***
+
+Als gebruiker wil ik een overboeking kunnen doen van mijn ene rekening naar mijn andere rekening, zodat ik mijn financiën overzichtelijk kan houden en ik makkelijk geld kan verschuiven tussen mijn verschillende rekeningen.
+Omschrijving: Als gebruiker wil ik binnen de Banky app geld kunnen overmaken van mijn ene rekening naar mijn andere rekening, zodat ik mijn financiën overzichtelijk kan houden en ik makkelijk geld kan verschuiven tussen mijn verschillende rekeningen.
+
+Acceptatiecriteria:
+1. De gebruiker moet in staat zijn om in te loggen op de Banky app en toegang te krijgen tot zijn/haar rekeningen.
+2. De gebruiker moet in staat zijn om een bedrag in te voeren dat hij/zij wil overmaken van de ene rekening naar de andere.
+3. De gebruiker moet in staat zijn om de juiste rekeningen te selecteren waar hij/zij het geld vanaf wil halen en waar hij/zij het geld naartoe wil sturen.
+--------------------------------------------------------------------------------------------------
+***USER STORY 2***
+
+Als gebruiker wil ik geld kunnen overmaken naar een andere persoon, zodat ik bijvoorbeeld geld kan terugbetalen aan vrienden of familie en ik niet afhankelijk ben van contant geld of overschrijvingen via mijn bank.
+Omschrijving: Als gebruiker wil ik binnen de Banky app geld kunnen overmaken naar een andere persoon, zodat ik bijvoorbeeld geld kan terugbetalen aan vrienden of familie en ik niet afhankelijk ben van contant geld of overschrijvingen via mijn bank.
+
+Acceptatiecriteria:
+1. De gebruiker moet in staat zijn om het bedrag in te voeren dat hij/zij wil overmaken naar de andere persoon.
+2. De gebruiker moet in staat zijn om de persoonlijke gegevens (naam en rekeningnummer) van de ontvanger in te voeren.
+3. De gebruiker moet in staat zijn om de overboeking te bevestigen en eventueel een omschrijving van de transactie toe te voegen.
+4. De ontvanger moet het geld kunnen ontvangen via zijn/haar eigen bank of betaalapp.
+--------------------------------------------------------------------------------------------------
+***USER STORY 3***
+
+Als gebruiker wil ik mijn saldo kunnen bekijken zonder dat anderen over mijn schouder kunnen meekijken, zodat ik mijn financiële gegevens privé kan houden en niemand anders in staat is om mijn financiële situatie te achterhalen.
+Omschrijving: Als gebruiker wil ik binnen de Banky app mijn saldo kunnen bekijken zonder dat anderen over mijn schouder kunnen meekijken, zodat ik mijn financiële gegevens privé kan houden en niemand anders in staat is om mijn financiële situatie te achterhalen.
+
+Acceptatiecriteria:
+1. De gebruiker moet in staat zijn om zijn/haar saldo te bekijken door in te loggen op de Banky app.
+2. Wanneer de gebruiker op het "oog-icoontje" drukt, moet het saldo onmiddellijk worden geblurd zodat anderen niet kunnen meekijken.
+3. Wanneer de gebruiker het "oog-icoontje" opnieuw indrukt, moet het saldo weer zichtbaar worden voor de gebruiker.
+4. Het blurren van het saldo moet goed werken en de gebruiker moet erop kunnen vertrouwen dat zijn/haar saldo altijd veilig is en niet zichtbaar is voor anderen.
