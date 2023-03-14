@@ -4,8 +4,38 @@
     background-color: white;
     min-height: calc(100vh - map-get(variables.$vhCalculation, "headerHeight") - map-get(variables.$vhCalculation, "bodyPadding") * 2);
     display: flex;
+    padding: 2rem;
 
     &__section {
         width: 50%;
+    }
+
+    &__header {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    &__money {
+        font-weight: 400;
+        font-size: 250%;
+    }
+
+    &__logo {
+        width: 5rem;
+        height: 5rem;
+        background-color: map-get(variables.$logoColors, "colorTwo");
+        border-radius: 50%;
+    }
+
+    &__eye {
+        width: 5rem;
+        height: 5rem;
+        background-color: map-get(variables.$logoColors, "colorTwo");
+        border-radius: 50%;
+    }
+
+    &__transactions {
+        list-style: none;
     }
 }

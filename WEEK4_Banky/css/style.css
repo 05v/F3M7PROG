@@ -22,16 +22,41 @@ body {
 
 .header {
   background-color: white;
-  height: 10rem;
+  height: 8rem;
 }
 
 .banky {
   background-color: white;
-  min-height: calc(100vh - 10rem - 8rem);
+  min-height: calc(100vh - 8rem - 8rem);
   display: flex;
+  padding: 2rem;
 }
 .banky__section {
   width: 50%;
+}
+.banky__header {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.banky__money {
+  font-weight: 400;
+  font-size: 250%;
+}
+.banky__logo {
+  width: 5rem;
+  height: 5rem;
+  background-color: #66347F;
+  border-radius: 50%;
+}
+.banky__eye {
+  width: 5rem;
+  height: 5rem;
+  background-color: #66347F;
+  border-radius: 50%;
+}
+.banky__transactions {
+  list-style: none;
 }
 
 /*# sourceMappingURL=style.css.map */
