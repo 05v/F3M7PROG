@@ -1,8 +1,8 @@
 @use 'abstracts/variables';
 
 body {
-    font-family: 'Open Sans', sans-serif;
-    background: linear-gradient(to bottom right, map-get(variables.$baseColors, "background"), 30%, map-get(variables.$baseColors, "backgroundDark"));
+    font-family: variables.$font-family;
+    background: variables.$gradient;
     min-height: 100vh;
     padding: map-get(variables.$vhCalculation, "bodyPadding");
     padding-bottom: 0;

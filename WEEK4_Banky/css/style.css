@@ -31,6 +31,8 @@ body {
   border-top-left-radius: 5rem;
   border-top-right-radius: 5rem;
   margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 .header__logo {
   display: flex;
@@ -38,6 +40,47 @@ body {
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
+}
+.header__wrapper {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+}
+.header__avatar {
+  width: 7rem;
+  height: 7rem;
+  background-color: #AA77FF;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  border: 0.4rem solid #66347F;
+}
+.header__avatar:hover {
+  cursor: pointer;
+}
+.header__avatar__head {
+  width: 35%;
+  height: 35%;
+  background-color: #66347F;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.8s all;
+}
+.header__avatar__body {
+  width: 70%;
+  height: 60%;
+  background-color: #66347F;
+  border-radius: 50%;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.header__avatar:hover .header__avatar__head {
+  transform: translate(-50%, -50%) scale(1.15);
 }
 
 body {
@@ -205,12 +248,19 @@ body {
   .banky__accounts::after {
     content: "";
     width: 100%;
-    height: 0.1rem;
+    height: 3%;
     background: linear-gradient(to bottom right, #AA77FF, 30%, #66347F);
     border: 0.2rem;
     position: absolute;
     bottom: 0;
     left: 0;
+  }
+  .header {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .header__emptyWrapper {
+    display: none;
   }
 }
 @media screen and (max-width: 37.5rem) {
@@ -219,6 +269,13 @@ body {
   }
   .header {
     border-radius: 0;
+    justify-content: center;
+  }
+  .header__emptyWrapper {
+    display: none;
+  }
+  .header__avatar {
+    display: none;
   }
   .banky__transactions {
     height: auto;
