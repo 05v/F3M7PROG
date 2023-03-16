@@ -56,6 +56,8 @@ body {
 }
 .banky__section {
   display: flex;
+}
+.banky__section--left {
   flex-direction: column;
   justify-content: space-between;
 }
@@ -149,6 +151,34 @@ body {
 .banky__transferButton:hover {
   cursor: pointer;
   background: #66347F;
+}
+.banky__accounts {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  width: 100%;
+  flex-direction: column;
+}
+.banky__account {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.banky__accountSwitcher {
+  background: none;
+  border: none;
+}
+.banky__accountSwitcher:hover {
+  cursor: pointer;
+}
+.banky__accountSwitcher:hover .banky__logo {
+  background: #66347F;
+}
+.banky__accountName {
+  font-weight: 400;
+  font-size: 120%;
 }
 
 /*# sourceMappingURL=style.css.map */

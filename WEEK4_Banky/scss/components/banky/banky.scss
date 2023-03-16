@@ -11,8 +11,13 @@
 
     &__section {
         display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+
+        &--left {
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        &--right {}
     }
 
     &__header {
@@ -118,4 +123,40 @@
             background: map-get(variables.$baseColors, "backgroundDark");
         }
     }
+
+    &__accounts {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4rem;
+        width: 100%;
+        flex-direction: column;
+    }
+
+    &__account {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        &Switcher {
+            background: none;
+            border: none;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            &:hover .banky__logo {
+                background: map-get(variables.$baseColors, "backgroundDark");
+            }
+        }
+
+        &Name {
+            font-weight: 400;
+            font-size: 120%;
+        }
+    }
+
+
 }
