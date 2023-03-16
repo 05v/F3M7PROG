@@ -64,6 +64,20 @@
             cursor: pointer;
             background: map-get(variables.$baseColors, "backgroundDark");
         }
+
+        &Button {
+            background: none;
+            border: none;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            &:hover .banky__logo {
+                background: map-get(variables.$baseColors, "backgroundDark");
+
+            }
+        }
     }
 
     &__transactions {
