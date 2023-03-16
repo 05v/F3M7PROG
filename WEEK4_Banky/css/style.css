@@ -19,19 +19,40 @@ body {
   background: linear-gradient(to bottom right, #AA77FF, 30%, #66347F);
   min-height: 100vh;
   padding: 4rem;
+  padding-bottom: 0;
 }
 
 .header {
   background-color: white;
   height: 8rem;
+  max-width: 150rem;
+  font-family: "Amatic SC", cursive;
+  font-weight: 400;
+  border-top-left-radius: 5rem;
+  border-top-right-radius: 5rem;
+  margin: 0 auto;
+}
+.header__logo {
+  display: flex;
+  font-size: 250%;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+body {
+  scrollbar-width: thin;
+  scrollbar-color: #AA77FF white;
 }
 
 .banky {
   background-color: white;
-  min-height: calc(100vh - 8rem - 8rem);
+  min-height: calc(100vh - 8rem - 4rem);
   display: grid;
-  grid-template-columns: 30% 70%;
+  grid-template-columns: 50% 50%;
   padding: 2rem;
+  margin: 0 auto;
+  max-width: 150rem;
 }
 .banky__section {
   display: flex;

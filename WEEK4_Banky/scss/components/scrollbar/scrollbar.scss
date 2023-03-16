@@ -1,0 +1,6 @@
+@use '../../abstracts/variables';
+
+body {
+    scrollbar-width: thin;
+    scrollbar-color: map-get(variables.$baseColors, "background") white;
+}

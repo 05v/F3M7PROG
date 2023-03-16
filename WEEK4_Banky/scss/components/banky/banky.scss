@@ -2,10 +2,12 @@
 
 .banky {
     background-color: white;
-    min-height: calc(100vh - map-get(variables.$vhCalculation, "headerHeight") - map-get(variables.$vhCalculation, "bodyPadding") * 2);
+    min-height: calc(100vh - map-get(variables.$vhCalculation, "headerHeight") - map-get(variables.$vhCalculation, "bodyPadding"));
     display: grid;
-    grid-template-columns: 30% 70%;
+    grid-template-columns: 50% 50%;
     padding: 2rem;
+    margin: 0 auto;
+    max-width: 150rem;
 
     &__section {
         display: flex;
