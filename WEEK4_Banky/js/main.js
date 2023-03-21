@@ -185,14 +185,17 @@ class RightSection {
   }
 }
 
-const header = new Header("body");
-header.render();
+class App {
+  constructor() {
+    this.header = new Header("body");
+    this.bankyMain = new BankyMain("body");
+    this.leftSection = new LeftSection();
+    this.rightSection = new RightSection();
+    this.header.render();
+    this.bankyMain.render();
+    this.bankyMain.main.appendChild(this.leftSection.render());
+    this.bankyMain.main.appendChild(this.rightSection.render());
+  }
+}
 
-const bankyMain = new BankyMain("body");
-bankyMain.render();
-
-const leftSection = new LeftSection();
-bankyMain.main.appendChild(leftSection.render());
-
-const rightSection = new RightSection();
-bankyMain.main.appendChild(rightSection.render());
+const app = new App();
