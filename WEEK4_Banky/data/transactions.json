@@ -1,0 +1,24 @@
+[{
+    "from/to": "Jeroen",
+    "amount": 10
+},
+{
+    "from/to": "Dejorden",
+    "amount": 60
+},
+{
+    "from/to": "Vlad",
+    "amount": -100
+},
+{
+    "from/to": "Collin",
+    "amount": 25
+},
+{
+    "from/to": "Carmen",
+    "amount": -15
+},
+{
+    "from/to": "Klarna Betaling",
+    "amount": 16
+}]
