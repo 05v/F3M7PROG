@@ -7,16 +7,18 @@ class GetDataFromApi {
   }
 
   async getData() {
-    await fetch(this.url)
-      .then(function (response) {
-        return response.json();
-      })
-      .then(function (data) {
-        this.data = data;
-      });
+    if (this.data === null) {
+      await fetch(this.url)
+        .then(function (response) {
+          return response.json();
+        })
+        .then((data) => {
+          this.data = data;
+        });
+    }
+    return this.data;
   }
 }
 
 const jeroen = new GetDataFromApi("/data/transactions.json");
-jeroen.getData();
-console.log(jeroen.data);
+jeroen.getData().then((data) => console.log(data));
