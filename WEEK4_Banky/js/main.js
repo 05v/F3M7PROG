@@ -26,58 +26,53 @@ class GetDataFromApi {
 // });
 
 class Header {
-    headerElement;
-    emptyWrapper;
-    logo;
-    piggyBankIcon;
-    bankyTitle;
-    wrapper;
-    avatar;
-    head;
-    body;
+  placeToRenderHeader;
 
-  constructor() {
-    this.headerElement = document.createElement("header");
-    this.headerElement.classList = "header";
+  constructor(placeToRenderHeader) {
+    this.placeToRenderHeader = document.querySelector(placeToRenderHeader);
 
-    var emptyWrapper = document.createElement("div");
-    emptyWrapper.classList = "header__emptyWrapper";
-    this.headerElement.appendChild(emptyWrapper);
+    this.header = document.createElement("header");
+    this.header.className = "header";
 
-    var logo = document.createElement("figure");
-    logo.classList = "header__logo";
+    this.emptyWrapper = document.createElement("div");
+    this.emptyWrapper.className = "header__emptyWrapper";
 
-    var piggyBankIcon = document.createElement("i");
-    piggyBankIcon.classList = "fa-solid fa-piggy-bank";
-    logo.appendChild(piggyBankIcon);
+    this.logo = document.createElement("figure");
+    this.logo.className = "header__logo";
 
-    var bankyTitle = document.createElement("h2");
-    bankyTitle.classList = "header__banky";
-    bankyTitle.textContent = "Banky";
-    logo.appendChild(bankyTitle);
+    this.piggyBankIcon = document.createElement("i");
+    this.piggyBankIcon.className = "fa-solid fa-piggy-bank";
 
-    this.headerElement.appendChild(logo);
+    this.bankyTitle = document.createElement("h2");
+    this.bankyTitle.className = "header__banky";
+    this.bankyTitle.textContent = "Banky";
 
-    var wrapper = document.createElement("div");
-    wrapper.classList = "header__wrapper";
+    this.wrapper = document.createElement("div");
+    this.wrapper.className = "header__wrapper";
 
-    var avatar = document.createElement("figure");
-    avatar.classList = "header__avatar";
+    this.avatar = document.createElement("figure");
+    this.avatar.className = "header__avatar";
 
-    var head = document.createElement("div");
-    head.classList = "header__avatar__head";
-    avatar.appendChild(head);
+    this.head = document.createElement("div");
+    this.head.className = "header__avatar__head";
 
-    var body = document.createElement("div");
-    body.classList = "header__avatar__body";
-    avatar.appendChild(body);
-
-    wrapper.appendChild(avatar);
-
-    this.headerElement.appendChild(wrapper);
+    this.body = document.createElement("div");
+    this.body.className = "header__avatar__body";
   }
 
-  render{
+  render() {
+    this.logo.appendChild(this.bankyTitle);
+    this.logo.appendChild(this.piggyBankIcon);
+    this.header.appendChild(this.emptyWrapper);
+    this.header.appendChild(this.logo);
+    this.header.appendChild(this.wrapper);
+    this.wrapper.appendChild(this.avatar);
+    this.avatar.appendChild(this.head);
+    this.avatar.appendChild(this.body);
 
+    this.placeToRenderHeader.appendChild(this.header);
   }
 }
+
+const header = new Header("body");
+header.render();
