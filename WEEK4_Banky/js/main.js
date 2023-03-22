@@ -20,11 +20,6 @@ class GetDataFromApi {
   }
 }
 
-// const jeroen = new GetDataFromApi("/data/transactions.json");
-// jeroen.getData().then(function (data) {
-//   console.log(data);
-// });
-
 class Header {
   placeToRenderHeader;
 
@@ -78,7 +73,20 @@ class BankyMain {
   constructor(placeToRenderMain) {
     this.placeToRenderMain = document.querySelector(placeToRenderMain);
     this.main = document.createElement("main");
+    this.leftSection = new LeftSection();
+    this.rightSection = new RightSection();
+
+    this.main.appendChild(this.leftSection.render());
+    this.main.appendChild(this.rightSection.render());
     this.main.className = "banky";
+  }
+
+  makeButtonsFromData(data) {
+    this.rightSection.makeButtonsFromData(data);
+  }
+
+  makeTransactionsFromData(data) {
+    this.leftSection.makeTransactionsFromData("Bankrekening", data);
   }
 
   render() {
@@ -108,17 +116,28 @@ class LeftSection {
     this.eyeIcon.className = "fa-solid fa-eye";
     this.transactionsList = document.createElement("ul");
     this.transactionsList.className = "banky__transactions";
-    this.transactionItem = document.createElement("li");
-    this.transactionItem.className = "banky__transaction";
-    this.name = document.createElement("h4");
-    this.name.className = "banky__name";
-    this.name.textContent = "Jeroen";
-    this.amount = document.createElement("h3");
-    this.amount.className = "banky__amount";
-    this.amount.textContent = "+€10,00";
-    this.transferButton = document.createElement("button");
-    this.transferButton.className = "banky__transferButton";
-    this.transferButton.textContent = "Overboeken";
+  }
+
+  makeTransactionsFromData(accounttoshow, data) {
+    console.table(data[accounttoshow]);
+    for (let i = 0; i < data[accounttoshow].length; i++) {
+      this.transactionItem = document.createElement("li");
+      this.transactionItem.className = "banky__transaction";
+      this.name = document.createElement("h4");
+      this.name.className = "banky__name";
+      this.name.textContent = data[accounttoshow][i]["from_to"];
+      this.amount = document.createElement("h3");
+      this.amount.className = "banky__amount";
+      this.amount.textContent = "€" + data[accounttoshow][i]["amount"];
+      this.transferButton = document.createElement("button");
+      this.transferButton.className = "banky__transferButton";
+      this.transferButton.textContent = "Overboeken";
+
+      this.transactionsList.appendChild(this.transactionItem);
+      this.transactionItem.appendChild(this.name);
+      this.transactionItem.appendChild(this.amount);
+      this.sectionLeft.appendChild(this.transferButton);
+    }
   }
 
   render() {
@@ -129,12 +148,8 @@ class LeftSection {
     this.eyeFigure.appendChild(this.eyeIcon);
     this.eyeButton.appendChild(this.eyeFigure);
     this.sectionHeader.appendChild(this.eyeButton);
-    this.transactionItem.appendChild(this.name);
-    this.transactionItem.appendChild(this.amount);
-    this.transactionsList.appendChild(this.transactionItem);
     this.sectionLeft.appendChild(this.sectionHeader);
     this.sectionLeft.appendChild(this.transactionsList);
-    this.sectionLeft.appendChild(this.transferButton);
     return this.sectionLeft;
   }
 }
@@ -143,59 +158,61 @@ class RightSection {
   constructor() {
     this.sectionRight = document.createElement("section");
     this.sectionRight.className = "banky__section banky__section--right";
+
     this.accountsList = document.createElement("ul");
     this.accountsList.className = "banky__accounts";
-    this.accountItem1 = document.createElement("li");
-    this.accountItem1.className = "banky__account";
-    this.accountSwitcher1 = document.createElement("button");
-    this.accountSwitcher1.className = "banky__accountSwitcher";
-    this.logoFigure1 = document.createElement("figure");
-    this.logoFigure1.className = "banky__logo";
-    this.houseIcon1 = document.createElement("i");
-    this.houseIcon1.className = "fa-solid fa-house";
-    this.accountName1 = document.createElement("h4");
-    this.accountName1.className = "banky__accountName";
-    this.accountName1.textContent = "Bankrekening";
-    this.accountItem2 = document.createElement("li");
-    this.accountItem2.className = "banky__account";
-    this.accountSwitcher2 = document.createElement("button");
-    this.accountSwitcher2.className = "banky__accountSwitcher";
-    this.logoFigure2 = document.createElement("figure");
-    this.logoFigure2.className = "banky__logo";
-    this.mugHotIcon = document.createElement("i");
-    this.mugHotIcon.className = "fa-solid fa-mug-hot";
-    this.accountName2 = document.createElement("h4");
-    this.accountName2.className = "banky__accountName";
-    this.accountName2.textContent = "ZZP-Rekening";
+  }
+
+  makeButtonsFromData(data) {
+    Object.entries(data).forEach((entry) => {
+      const accountItem = document.createElement("li");
+      accountItem.className = "banky__account";
+      const accountSwitcher = document.createElement("button");
+      accountSwitcher.className = "banky__accountSwitcher";
+      const logoFigure = document.createElement("figure");
+      logoFigure.className = "banky__logo";
+      const mugHotIcon = document.createElement("i");
+      mugHotIcon.className = "fa-solid fa-mug-hot";
+      const accountName = document.createElement("h4");
+      accountName.className = "banky__accountName";
+      accountName.textContent = entry[0];
+
+      logoFigure.appendChild(mugHotIcon);
+      accountSwitcher.appendChild(logoFigure);
+      accountItem.appendChild(accountSwitcher);
+      accountItem.appendChild(accountName);
+
+      this.accountsList.appendChild(accountItem);
+    });
   }
 
   render() {
-    this.logoFigure1.appendChild(this.houseIcon1);
-    this.accountSwitcher1.appendChild(this.logoFigure1);
-    this.accountItem1.appendChild(this.accountSwitcher1);
-    this.accountItem1.appendChild(this.accountName1);
-    this.accountsList.appendChild(this.accountItem1);
-    this.logoFigure2.appendChild(this.mugHotIcon);
-    this.accountSwitcher2.appendChild(this.logoFigure2);
-    this.accountItem2.appendChild(this.accountSwitcher2);
-    this.accountItem2.appendChild(this.accountName2);
-    this.accountsList.appendChild(this.accountItem2);
     this.sectionRight.appendChild(this.accountsList);
     return this.sectionRight;
   }
 }
 
 class App {
+  bankyHeader;
+  bankyMain;
+  GetDataFromApi;
+
   constructor() {
     this.header = new Header("body");
-    this.bankyMain = new BankyMain("body");
-    this.leftSection = new LeftSection();
-    this.rightSection = new RightSection();
     this.header.render();
+
+    this.bankyMain = new BankyMain("body");
     this.bankyMain.render();
-    this.bankyMain.main.appendChild(this.leftSection.render());
-    this.bankyMain.main.appendChild(this.rightSection.render());
+
+    this.GetDataFromApi = new GetDataFromApi("./data/transactions.json");
+    this.GetDataFromApi.getData().then((data) => {
+      this.bankyMain.makeTransactionsFromData(data);
+      this.bankyMain.makeButtonsFromData(data);
+    });
   }
 }
 
 const app = new App();
+// jeroen.getData().then(function (data) {
+//   console.log(data);
+// });

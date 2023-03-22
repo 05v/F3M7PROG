@@ -1,37 +1,37 @@
 {
     "Bankrekening":[
        {
-          "from/to":"Jeroen",
+          "from_to":"Jeroen",
           "amount":10
        },
        {
-          "from/to":"Dejorden",
+          "from_to":"Dejorden",
           "amount":60
        },
        {
-          "from/to":"Vlad",
+          "from_to":"Vlad",
           "amount":-100
        },
        {
-          "from/to":"Collin",
+          "from_to":"Collin",
           "amount":25
        },
        {
-          "from/to":"Carmen",
+          "from_to":"Carmen",
           "amount":-15
        },
        {
-          "from/to":"Klarna Betaling",
+          "from_to":"Klarna Betaling",
           "amount":16
        }
     ],
     "ZZP-Rekening":[
        {
-          "from/to":"Bedrijf X",
+          "from_to":"Bedrijf X",
           "amount":10000
        },
        {
-          "from/to":"Bedrijf XYZ",
+          "from_to":"Bedrijf XYZ",
           "amount":-500
        }
     ]
