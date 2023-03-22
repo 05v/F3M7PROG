@@ -107,7 +107,6 @@ class LeftSection {
     this.houseIcon.className = "fa-solid fa-house";
     this.money = document.createElement("h1");
     this.money.className = "banky__money";
-    this.money.textContent = "Saldo €90,00";
     this.eyeButton = document.createElement("button");
     this.eyeButton.className = "banky__eyeButton";
     this.eyeFigure = document.createElement("figure");
@@ -116,10 +115,18 @@ class LeftSection {
     this.eyeIcon.className = "fa-solid fa-eye";
     this.transactionsList = document.createElement("ul");
     this.transactionsList.className = "banky__transactions";
+    this.transferButton = document.createElement("button");
+    this.transferButton.className = "banky__transferButton";
+    this.transferButton.textContent = "Overboeken";
   }
 
   makeTransactionsFromData(accounttoshow, data) {
-    console.table(data[accounttoshow]);
+    let totalMoney = 0;
+    for (let i = 0; i < data[accounttoshow].length; i++) {
+      totalMoney += data[accounttoshow][i]["amount"];
+    }
+    this.money.textContent = "Saldo €" + totalMoney;
+
     for (let i = 0; i < data[accounttoshow].length; i++) {
       this.transactionItem = document.createElement("li");
       this.transactionItem.className = "banky__transaction";
@@ -129,9 +136,6 @@ class LeftSection {
       this.amount = document.createElement("h3");
       this.amount.className = "banky__amount";
       this.amount.textContent = "€" + data[accounttoshow][i]["amount"];
-      this.transferButton = document.createElement("button");
-      this.transferButton.className = "banky__transferButton";
-      this.transferButton.textContent = "Overboeken";
 
       this.transactionsList.appendChild(this.transactionItem);
       this.transactionItem.appendChild(this.name);
