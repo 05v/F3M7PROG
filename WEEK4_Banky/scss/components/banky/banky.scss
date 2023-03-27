@@ -1,5 +1,6 @@
 @use '../../abstracts/variables';
 @use '../../abstracts/mixins';
+@use '../../abstracts/animations';
 
 .banky {
     background-color: white;
@@ -34,6 +35,10 @@
     &__money {
         font-weight: 400;
         font-size: 200%;
+
+        &--blur {
+            filter: blur(variables.$bluramount);
+        }
     }
 
     &__logo {
@@ -88,6 +93,10 @@
         gap: 2rem;
         height: 40rem;
         overflow-y: scroll;
+
+        &--blur {
+            filter: blur(variables.$bluramount);
+        }
     }
 
     &__transaction {
@@ -97,6 +106,8 @@
         justify-content: space-between;
         position: relative;
         padding-bottom: 0.5rem;
+
+        @include animations.popupMixin;
 
         &::after {
             @include mixins.afterStyle;
@@ -144,6 +155,10 @@
         display: flex;
         align-items: center;
         gap: 1rem;
+
+        &:hover {
+            cursor: pointer;
+        }
 
         &Switcher {
             background: none;

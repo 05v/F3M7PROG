@@ -74,8 +74,7 @@ class BankyMain {
     this.placeToRenderMain = document.querySelector(placeToRenderMain);
     this.main = document.createElement("main");
     this.leftSection = new LeftSection();
-    this.rightSection = new RightSection();
-
+    this.rightSection = new RightSection(this);
     this.main.appendChild(this.leftSection.render());
     this.main.appendChild(this.rightSection.render());
     this.main.className = "banky";
@@ -86,7 +85,11 @@ class BankyMain {
   }
 
   makeTransactionsFromData(data) {
-    this.leftSection.makeTransactionsFromData("Bankrekening", data);
+    this.leftSection.makeTransactionsFromData(Object.entries(data)[0][0], data);
+  }
+
+  callFromRightSection(entry, data) {
+    this.leftSection.makeTransactionsFromData(entry[0], data);
   }
 
   render() {
@@ -103,16 +106,21 @@ class LeftSection {
     this.sectionHeaderDiv = document.createElement("div");
     this.sectionLogo = document.createElement("figure");
     this.sectionLogo.className = "banky__logo";
+
     this.houseIcon = document.createElement("i");
     this.houseIcon.className = "fa-solid fa-house";
+
     this.money = document.createElement("h1");
     this.money.className = "banky__money";
+
     this.eyeButton = document.createElement("button");
     this.eyeButton.className = "banky__eyeButton";
+    this.eyeButton.onclick = this.eyeButtonClicked;
     this.eyeFigure = document.createElement("figure");
     this.eyeFigure.className = "banky__eye";
     this.eyeIcon = document.createElement("i");
     this.eyeIcon.className = "fa-solid fa-eye";
+
     this.transactionsList = document.createElement("ul");
     this.transactionsList.className = "banky__transactions";
     this.transferButton = document.createElement("button");
@@ -120,22 +128,31 @@ class LeftSection {
     this.transferButton.textContent = "Overboeken";
   }
 
-  makeTransactionsFromData(accounttoshow, data) {
-    let totalMoney = 0;
-    for (let i = 0; i < data[accounttoshow].length; i++) {
-      totalMoney += data[accounttoshow][i]["amount"];
-    }
-    this.money.textContent = "Saldo €" + totalMoney;
+  eyeButtonClicked = () => {
+    this.transactionsList.classList.toggle("banky__transactions--blur");
+    this.money.classList.toggle("banky__money--blur");
+  };
 
-    for (let i = 0; i < data[accounttoshow].length; i++) {
+  makeTransactionsFromData(accountToShow, data) {
+    let transactions = data[accountToShow].transactions;
+    let totalMoney = 0;
+    for (let i = 0; i < transactions.length; i++) {
+      totalMoney += transactions[i]["amount"];
+    }
+    this.money.textContent = "Saldo" + " €" + totalMoney;
+
+    // Empty ul before we make li
+    this.transactionsList.innerHTML = "";
+
+    for (let i = 0; i < transactions.length; i++) {
       this.transactionItem = document.createElement("li");
       this.transactionItem.className = "banky__transaction";
       this.name = document.createElement("h4");
       this.name.className = "banky__name";
-      this.name.textContent = data[accounttoshow][i]["from_to"];
+      this.name.textContent = transactions[i]["from_to"];
       this.amount = document.createElement("h3");
       this.amount.className = "banky__amount";
-      this.amount.textContent = "€" + data[accounttoshow][i]["amount"];
+      this.amount.textContent = "€" + transactions[i]["amount"];
 
       this.transactionsList.appendChild(this.transactionItem);
       this.transactionItem.appendChild(this.name);
@@ -159,7 +176,9 @@ class LeftSection {
 }
 
 class RightSection {
-  constructor() {
+  bankyMain;
+  constructor(bankyMain) {
+    this.bankyMain = bankyMain;
     this.sectionRight = document.createElement("section");
     this.sectionRight.className = "banky__section banky__section--right";
 
@@ -171,17 +190,24 @@ class RightSection {
     Object.entries(data).forEach((entry) => {
       const accountItem = document.createElement("li");
       accountItem.className = "banky__account";
+      accountItem.onclick = () => {
+        this.bankyMain.callFromRightSection(entry, data);
+      };
+
       const accountSwitcher = document.createElement("button");
       accountSwitcher.className = "banky__accountSwitcher";
       const logoFigure = document.createElement("figure");
       logoFigure.className = "banky__logo";
-      const mugHotIcon = document.createElement("i");
-      mugHotIcon.className = "fa-solid fa-mug-hot";
+
+      // Set icon classnames from the JSON data
+      const icon = document.createElement("i");
+      icon.className = entry[1].icon;
+
       const accountName = document.createElement("h4");
       accountName.className = "banky__accountName";
       accountName.textContent = entry[0];
 
-      logoFigure.appendChild(mugHotIcon);
+      logoFigure.appendChild(icon);
       accountSwitcher.appendChild(logoFigure);
       accountItem.appendChild(accountSwitcher);
       accountItem.appendChild(accountName);
@@ -217,6 +243,3 @@ class App {
 }
 
 const app = new App();
-// jeroen.getData().then(function (data) {
-//   console.log(data);
-// });

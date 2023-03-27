@@ -1,38 +1,96 @@
 {
-    "Bankrekening":[
+   "Bankrekening": {
+     "icon": "fa-solid fa-house",
+     "transactions": [
        {
-          "from_to":"Jeroen",
-          "amount":10
+         "from_to": "Jeroen",
+         "amount": 10
        },
        {
-          "from_to":"Dejorden",
-          "amount":60
+         "from_to": "Dejorden",
+         "amount": 60
        },
        {
-          "from_to":"Vlad",
-          "amount":20
+         "from_to": "Vlad",
+         "amount": 20
        },
        {
-          "from_to":"Collin",
-          "amount":25
+         "from_to": "Collin",
+         "amount": 25
        },
        {
-          "from_to":"Carmen",
-          "amount":-15
+         "from_to": "Carmen",
+         "amount": -15
        },
        {
-          "from_to":"Klarna Betaling",
-          "amount":16
+         "from_to": "Klarna Betaling",
+         "amount": 16
+       },        {
+         "from_to": "Spaarrekening",
+         "amount": -240
+       },
+       {
+         "from_to": "ZZP-Rekening",
+         "amount": 2500
+       },
+       {
+         "from_to": "Spaarrekening",
+         "amount": 100
+       },
+       {
+        "from_to": "Spaarrekening",
+        "amount": -500
+      },
+      {
+        "from_to": "Spaarrekening",
+        "amount": -820
+      },
+      {
+        "from_to": "Spaarrekening",
+        "amount": -25
+      }
+     ]
+   },
+   "ZZP-Rekening": {
+      "icon": "fa-solid fa-mug-hot",
+      "transactions": [
+        {
+          "from_to": "Bedrijf X",
+          "amount": 10000
+        },
+        {
+          "from_to": "Bedrijf XYZ",
+          "amount": -500
+        },
+        {
+         "from_to": "Bankrekening",
+         "amount": -2500
        }
-    ],
-    "ZZP-Rekening":[
-       {
-          "from_to":"Bedrijf X",
-          "amount":10000
+      ]
+    },
+    "Spaarrekening": {
+      "icon": "fa-solid fa-sack-xmark",
+      "transactions": [
+        {
+          "from_to": "Bankrekening",
+          "amount": 240
+        },
+        {
+          "from_to": "Bankrekening",
+          "amount": -100
+        },
+        {
+         "from_to": "Bankrekening",
+         "amount": 500
        },
        {
-          "from_to":"Bedrijf XYZ",
-          "amount":-500
+         "from_to": "Bankrekening",
+         "amount": 820
+       },
+       {
+         "from_to": "Bankrekening",
+         "amount": 25
        }
-    ]
- }
+      ]
+    }
+  }
