@@ -12,12 +12,19 @@ class Api {
 }
 
 class Filter {
+  filteredResult = [];
+
   filter(platform, data) {
     for (let i = 0; i < data.length; i++) {
       if (data[i].platform === platform) {
-        console.log(data[i].title);
+        this.filteredResult.push(data[i]);
       }
     }
+  }
+
+  randomFromResult() {
+    let randomNumber = Math.floor(Math.random() * 3); // 0, 1, 2
+    console.log(this.filteredResult[randomNumber]);
   }
 }
 
@@ -30,6 +37,7 @@ class App {
 
     this.api.getData().then(() => {
       this.filter.filter("PS2", this.api.data);
+      this.filter.randomFromResult();
     });
   }
 }
