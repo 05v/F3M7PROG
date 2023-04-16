@@ -49,9 +49,9 @@ class App {
     this.urlScraper = new URLScraper();
 
     this.urlScraper.getDataFromURL();
-    console.log(this.urlScraper.platform);
+
     this.api.getData().then(() => {
-      this.filter.filter("PS5", this.api.data);
+      this.filter.filter(this.urlScraper.platform, this.api.data);
       let randomResult = this.filter.randomFromResult();
       console.log(randomResult);
     });
