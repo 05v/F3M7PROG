@@ -23,8 +23,8 @@ class Filter {
   }
 
   randomFromResult() {
-    let randomNumber = Math.floor(Math.random() * 3); // 0, 1, 2
-    console.log(this.filteredResult[randomNumber]);
+    let randomNumber = Math.floor(Math.random() * this.filteredResult.length);
+    return this.filteredResult[randomNumber];
   }
 }
 
@@ -36,8 +36,9 @@ class App {
     this.filter = new Filter();
 
     this.api.getData().then(() => {
-      this.filter.filter("PS2", this.api.data);
-      this.filter.randomFromResult();
+      this.filter.filter("PS5", this.api.data);
+      let randomResult = this.filter.randomFromResult();
+      console.log(randomResult);
     });
   }
 }
