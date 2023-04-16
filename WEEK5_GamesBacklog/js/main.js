@@ -31,12 +31,34 @@ class Filter {
 class URLScraper {
   currentURL;
   platform;
+  pretty;
   constructor() {
     this.currentURL = window.location.href;
   }
 
   getDataFromURL() {
     this.platform = this.currentURL.split("platform=")[1];
+    this.pretty = new PrettyPlatform(this.platform);
+    console.log(this.pretty.platform);
+  }
+}
+
+class PrettyPlatform {
+  platform;
+
+  constructor(platform) {
+    this.platform = platform;
+    this.platformToUpperCase();
+    this.removeSpaces();
+  }
+
+  platformToUpperCase() {
+    this.platform = this.platform.toUpperCase();
+  }
+
+  removeSpaces() {
+    this.platform = this.platform.replace(" ", "");
+    this.platform = this.platform.replace("%20", "");
   }
 }
 
