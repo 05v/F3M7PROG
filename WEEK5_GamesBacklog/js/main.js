@@ -39,7 +39,6 @@ class URLScraper {
   getDataFromURL() {
     this.platform = this.currentURL.split("platform=")[1];
     this.pretty = new PrettyPlatform(this.platform);
-    console.log(this.pretty.platform);
   }
 }
 
@@ -57,8 +56,8 @@ class PrettyPlatform {
   }
 
   removeSpaces() {
-    this.platform = this.platform.replace(" ", "");
-    this.platform = this.platform.replace("%20", "");
+    this.platform = this.platform.replaceAll(" ", "");
+    this.platform = this.platform.replaceAll("%20", "");
   }
 }
 
@@ -73,7 +72,7 @@ class App {
     this.urlScraper.getDataFromURL();
 
     this.api.getData().then(() => {
-      this.filter.filter(this.urlScraper.platform, this.api.data);
+      this.filter.filter(this.urlScraper.pretty.platform, this.api.data);
       let randomResult = this.filter.randomFromResult();
       console.log(randomResult);
     });
