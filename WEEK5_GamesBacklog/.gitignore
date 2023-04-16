@@ -1,0 +1,40 @@
+&__avatar {
+        width: 10rem;
+        height: 10rem;
+        background-color: map-get(variables.$logoColors, "colorOne");
+        border-radius: 50%;
+        position: relative;
+        overflow: hidden;
+        border: 0.5rem solid map-get(variables.$logoColors, "colorTwo");
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &__head {
+            width: 35%;
+            height: 35%;
+            background-color: map-get(variables.$logoColors, "colorTwo");
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: 0.8s all;
+        }
+
+        &__body {
+            width: 70%;
+            height: 60%;
+            background-color: map-get(variables.$logoColors, "colorTwo");
+            border-radius: 50%;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        &:hover &__head {
+            transform: translate(-50%, -50%) scale(1.15);
+        }
+    }
