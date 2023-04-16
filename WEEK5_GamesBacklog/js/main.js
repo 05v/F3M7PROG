@@ -12,8 +12,12 @@ class Api {
 }
 
 class Filter {
-  filter(platform) {
-    console.log(platform);
+  filter(platform, data) {
+    for (let i = 0; i < data.length; i++) {
+      if (data[i].platform === platform) {
+        console.log(data[i].title);
+      }
+    }
   }
 }
 
@@ -25,9 +29,8 @@ class App {
     this.filter = new Filter();
 
     this.api.getData().then(() => {
-      console.log(this.api.data);
+      this.filter.filter("PS2", this.api.data);
     });
-    this.filter.filter("PS4");
   }
 }
 
