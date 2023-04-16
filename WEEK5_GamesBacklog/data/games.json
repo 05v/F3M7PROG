@@ -1,0 +1,44 @@
+{
+    "games": [
+        {
+            "title": "Death Stranding",
+            "platform": "PS5"
+        },
+        {
+            "title": "Nioh",
+            "platform": "PS4"
+        },
+        {
+            "title": "Super Dragonball Heroes",
+            "platform": "Nintendo Switch"
+        },
+        {
+            "title": "Dragonball The Breakers",
+            "platform": "Nintendo Switch"
+        },
+        {
+            "title": "Shadow of the Colossus",
+            "platform": "PS3"
+        },
+        {
+            "title": "Dante's Inferno",
+            "platform": "PS3"
+        },
+        {
+            "title": "Jak 3",
+            "platform": "PS2"
+        },
+        {
+            "title": "Champions of Norrath",
+            "platform": "PS2"
+        },
+        {
+            "title": "Kingdom Hearts II",
+            "platform": "PS2"
+        },
+        {
+            "title": "Metal Gear Solid V",
+            "platform": "PS4"
+        }
+    ]
+}
