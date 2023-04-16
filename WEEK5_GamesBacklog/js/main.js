@@ -28,13 +28,28 @@ class Filter {
   }
 }
 
+class URLScraper {
+  currentURL;
+  platform;
+  constructor() {
+    this.currentURL = window.location.href;
+  }
+
+  getDataFromURL() {
+    this.platform = this.currentURL.split("platform=")[1];
+  }
+}
+
 class App {
   api;
   filter;
   constructor() {
     this.api = new Api();
     this.filter = new Filter();
+    this.urlScraper = new URLScraper();
 
+    this.urlScraper.getDataFromURL();
+    console.log(this.urlScraper.platform);
     this.api.getData().then(() => {
       this.filter.filter("PS5", this.api.data);
       let randomResult = this.filter.randomFromResult();
